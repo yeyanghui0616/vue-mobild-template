@@ -1,0 +1,35 @@
+<!--
+ * @Author: yeyanghui
+ * @Description: 
+ * @Date: 2022-03-04 09:19:11
+ * @LastEditTime: 2022-03-04 10:56:57
+ * @FilePath: /phone_template/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      function gethtmlfontsize(){
+      // 三个步骤:
+      // 1.获取html的宽
+      let htmlwidth=document.documentElement.clientWidth || document.body.clientWidth;//有些浏览器documentElement获取不到,那就使用后面的body
+      // 2.htmlDom
+      let htmlDom=document.getElementsByTagName('html')[0]
+      //3.设置根元素样式
+      htmlDom.style.fontSize=htmlwidth/20+'px';
+      }
+      // 调用一次
+      gethtmlfontsize();
+      // 添加监听事件(resize是监听的意思)
+      window.addEventListener('resize',gethtmlfontsize)
+    </script>
+  </body>
+</html>
